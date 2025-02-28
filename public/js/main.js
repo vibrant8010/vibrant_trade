@@ -51,25 +51,7 @@ descriptions.forEach(function (description) {
 });
 });
 
-// Swiper Initialization
-// var swiper = new Swiper(".mySwiper", {
-//     pagination: {
-//         el: ".swiper-pagination",
-//         clickable: true,
-//     },
-//     navigation: {
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//     },
-//     loop: true,
-//     slidesPerView: 1,
-//     spaceBetween: 10,
-//     breakpoints: {
-//         430: { slidesPerView: 2, spaceBetween: 10 },
-//         768: { slidesPerView: 3, spaceBetween: 5 },
-//         1024: { slidesPerView: 4, spaceBetween: 15 },
-//     },
-// });
+
 
 $(document).ready(function () {
 $("#topcategorycaresoule").owlCarousel({
@@ -607,7 +589,7 @@ fetch(url2)
 
 
 document.addEventListener('DOMContentLoaded', () => {
-const tabs = document.querySelectorAll('.nav-item .nav-link'); // Select all tabs
+const tabs = document.querySelectorAll('.product-desc-section .nav-link'); // Select all tabs
 const contents = document.querySelectorAll('.tab-content'); // Select all tab content sections
 
 tabs.forEach(tab => {

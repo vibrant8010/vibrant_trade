@@ -70,7 +70,11 @@
         </div>
         <div class="col-xl-10 col-lg-10 col-sm-9 col-md-9 col-xl-9 px-xl-5 px-md-2 px-sm-1 px-1">
           <div class="row m-0">
-            <div class="col-xl-12 col-lg-12 col-12 py-4 d-flex justify-content-end">
+            <div class="col-xl-12 col-lg-12 col-12 py-4 d-flex justify-content-between">
+                <div class="backword-login">
+                       <span><i class="fa-solid fa-arrow-left" style="color:#8b8b8bc2"></i></span>
+                      <a href="{{ route('user.home') }}">Back To Website</a>
+                </div>
                 <a class="navbar-brand" href="#">
                   <img src="
                   {{ asset('images/company-logo.png') }}" width="150px" height="auto" />
@@ -298,9 +302,8 @@
                             ></i
                           ></span>
                         </div>
-                        <div class="input-type-cont                      <label class="input-field-lable" for="pincode"
-                            >Pincode</label
-                          >
+                        <div class="input-type-cont">
+                         <label class="input-field-lable" for="pincode">Pincode</label>
                           <input
                             type="text"
                             id="pincode"
@@ -311,7 +314,8 @@
                             ><i class="fa-solid fa-map-pin input-icon"></i
                           ></span>
                         </div>
-                        <div class="input-type-cont                      <label class="input-field-lable" for="state"
+                        <div class="input-type-cont">
+                              <label class="input-field-lable" for="state"
                             >State</label
                           >
                           <input

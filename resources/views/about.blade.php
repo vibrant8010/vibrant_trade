@@ -22,7 +22,7 @@
                         <h3 class="about-details-main-heading">About US</h3>
                     </div>
                     <div class="about-details-heading">
-                        Vibrant India Trade: Your Premier B2B Platform for Houseware and Kitchen Utensils 
+                        Vibrant India Trade: Your Premier B2B Platform for Houseware and Kitchen Utensils
                     </div>
                     <div class="about-description-main mt-2">
                         <p class="about-paragraph-text">
@@ -35,7 +35,7 @@
                         <p class="about-paragraph-text">
                             <span class="company-title">Vibrant India Trade</span>  boasts the most extensive database of manufacturers, OEMs, importers, exporters, distributors, dealers, traders, in India. This comprehensive network makes it the most sought-after inquiry-based platform for the vast architectural hardware and interior products industry.
                         </p>
-                        
+
                         <p class="about-paragraph-text">
                             Experience the convenience and reliability of <span class="company-title">Vibrant India Trade</span>  – your ultimate destination for all your houseware and kitchen utensil needs.
                         </p>
@@ -81,7 +81,7 @@
                             <p style="font-size: 14px;"> Any Question? Contact us at<span style="cursor: pointer;"> (+91) 992 448 8938</span></p>
                             <p style="font-size: 14px;">Interested in becoming a supplier on the VIBRANT INDIA TRADE Market Place? .</p>
                         </div>
-                </div>
+                </div>x
             </div>
         </div>
     </div>

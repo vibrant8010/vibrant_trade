@@ -870,7 +870,7 @@ menuBtn.style.display = 'block';
 
     if (filterBox && filterBtn) {
         // Create and append close button dynamically
-        const filterCloseButton = document.createElement('span');
+        const filterCloseButton = do''cument.createElement('span');
         filterCloseButton.classList.add('filter-close');
         filterCloseButton.innerHTML = '&times;';
         filterBox.appendChild(filterCloseButton);

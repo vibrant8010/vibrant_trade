@@ -161,7 +161,19 @@
     color: #fff;
     z-index: 1090 !important;
   }
-
+  .backword-login{
+    padding: 6px 12px;
+    background-color: rgba(216, 216, 216,0.1);
+    border-radius: 30px;
+  }
+  .backword-login i{
+   color: #eaeaea00;
+  }
+  .backword-login a{
+      text-decoration: none;
+      color: var(--shade-color);
+      font-size: 13px;
+  }
   .carousel-indicators [data-bs-target] {
     width: 36px;
     height: 7px;

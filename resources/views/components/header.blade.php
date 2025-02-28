@@ -173,17 +173,25 @@
                 <li class="nav-item"><a href="{{ route('alltrendingcategory') }}" class="nav-link">Trending
                         Products</a></li>
                 <li class="nav-item"><a href="#Blogs" class="nav-link">Blogs</a></li>
-                <li class="nav-item nav-item d-sm-block d-block d-lg-none d-md-none">
+                {{-- <li class="nav-item nav-item d-sm-block d-block d-lg-none d-md-none">
                      <a href="{{ route('business.register') }}" class="btn-links py-3">
                     <span class="lg-img">
-                        {{-- <img src="{{ asset('images/registration.png') }}" alt=""
-                            style="height: 30px;width:30px;"> --}}
+
                             <i class="fa-regular fa-file"></i>
                     </span>
                     Join Free
-                </a></li>
+                </a></li> --}}
             </ul>
         </nav>
+                 <div class="nav-item nav-item d-sm-block d-block d-lg-none d-md-none m-0 sticky-note">
+                    <a href="{{ route('business.register') }}" class="btn-links py-3">
+                        Join Free
+                    </a>
+
+        </div>
+
+
+
     </div>
 
     <!-- Custom Modal -->
