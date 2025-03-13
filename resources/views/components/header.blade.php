@@ -20,8 +20,64 @@
                             </li>
                         @endforeach
                     </ul>
+<<<<<<< HEAD
                     {{-- </li> --}}
                 </ul>
+=======
+                </li>
+            </ul>
+            <ul class="nav-view">
+                <li class="nav-item mobile-logo py-4 px-1 d-lg-none d-sm-block d-md-none">
+                    <div class="header-logo-container d-md-block d-sm-block d-lg-none">
+                        <a href="{{ route('user.home') }}">
+                            <img src="{{ asset('images/mobilelogo.png') }}" alt="company logo"
+                                style="height: 32px; width: 169px;">
+                        </a>
+                    </div>
+                    {{-- <span class="close-btn" id="close-btn" style="display: block;">×</span> --}}
+                </li>
+                <li class="nav-item"><a href="{{ route('innertopcategory') }}" class="nav-link">Top
+                        Category</a></li>
+                <li class="nav-item"><a href="{{ route('newarrival') }}" class="nav-link">New Arrival</a>
+                </li>
+                <li class="nav-item"><a href="{{ route('alltrendingcategory') }}" class="nav-link">Trending
+                        Products</a></li>
+                <li class="nav-item"><a href="#Blogs" class="nav-link">Blogs</a></li>
+                {{-- <li class="nav-item nav-item d-sm-block d-block d-lg-none d-md-none">
+                     <a href="{{ route('business.register') }}" class="btn-links py-3">
+                    <span class="lg-img">
+
+                            <i class="fa-regular fa-file"></i>
+                    </span>
+                    Join Free
+                </a></li> --}}
+            </ul>
+        </nav>
+                 <div class="nav-item nav-item d-sm-block d-block d-lg-none d-md-none m-0 sticky-note">
+                    <a href="{{ route('business.register') }}" class="btn-links py-3">
+                        Join Free
+                    </a>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- Custom Modal -->
+    <div class="custom-modal-overlay" id="customModal" style="display: none;">
+        <div class="custom-modal">
+            <div class="custom-modal-header">
+                <div class="custom-modal-logo">
+                    <a href="#"><img src="{{ asset('images/desktoplogo.png') }}" alt="Company Logo"
+                            style="height: 25px;width:132px;" /></a>
+                </div>
+                <div class="custom-modal-welcome">
+                    <span class="welcom-txt">Welcome,</span> <br />
+                    Login for a seamless experience
+                </div>
+                <button class="custom-modal-close" id="closeModal">&times;</button>
+>>>>>>> d419f26caf0727dbab5dbcab8b9f6b3c3a20d6ee
             </div>
         </div>
         <span class="close-button"><i style='font-size:24px' class='fas'>&#xf104;</i></span>

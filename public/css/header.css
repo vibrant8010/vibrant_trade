@@ -1268,6 +1268,7 @@ header .nav-container .nav-view .nav-item .nav-link:hover::before,
 
     /*sticky note*/
    .sticky-note{
+<<<<<<< HEAD
     position: absolute;
     background-color: var(--ternery-color);
     left: -27px;
@@ -1282,11 +1283,27 @@ header .nav-container .nav-view .nav-item .nav-link:hover::before,
     color: var(--light-color);
     font-size: 14px;
     padding: 0 10px;
+=======
+      position: absolute;
+      background-color: var(--ternery-color);
+      left: 0;
+      top: 136px;
+      padding: 20px 0;
+      border-radius: 0 15px 15px 0;
+      box-shadow:rgb(39 25 25 / 22%) 1.95px 1.95px 0px;
+    }
+   .sticky-note .btn-links{
+    height: 100%;
+    color: var(--light-color);
+   font-size: 14px;
+   rotate: 271deg;
+>>>>>>> d419f26caf0727dbab5dbcab8b9f6b3c3a20d6ee
    }
    .sticky-note .btn-links:hover{
     color: var(--light-color);
    }
 
+<<<<<<< HEAD
 
 
 
@@ -1499,3 +1516,5 @@ header .nav-container .nav-view .nav-item .nav-link:hover::before,
         left:126px;
     }
 }
+=======
+>>>>>>> d419f26caf0727dbab5dbcab8b9f6b3c3a20d6ee
