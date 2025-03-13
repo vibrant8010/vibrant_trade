@@ -1,162 +1,111 @@
 @extends('adminpanel.adminlayout')
 
 @section('content')
- 
-    <h1 class="form-title">Edit Product</h1>
+    <div class="container">
+        <h1>Edit Blog</h1>
+        <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data" novalidate>
+            @csrf
+            @method('PUT')
 
-    @if (session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+            <div class="form-group">
+                <label for="heading">Heading</label>
+                <input type="text" class="form-control" name="heading" value="{{ $blog->heading }}" required>
+            </div>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+            <div class="form-group">
+                <label for="detail_subcontent">Detail Subcontent</label>
+                <textarea class="form-control ckeditor5" name="detail_subcontent" id="detail_subcontent" required>{{ $blog->detail_subcontent }}</textarea>
+            </div>
+
+            <!-- Dynamic Subtitle and Paragraph Fields -->
+            <div id="dynamic-fields">
+                @foreach ($blog->sections as $index => $section)
+                    <div class="form-group">
+                        <label for="subtitle{{ $index + 1 }}">Subtitle {{ $index + 1 }}</label>
+                        <input type="text" class="form-control" name="subtitles[]" value="{{ $section->subtitle }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="textcontent{{ $index + 1 }}">Text Content {{ $index + 1 }}</label>
+                        <textarea class="form-control ckeditor5" name="textcontents[]" id="textcontent{{ $index + 1 }}" required>{{ $section->textcontent }}</textarea>
+                    </div>
                 @endforeach
-            </ul>
-        </div>
-    @endif
-    <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
-        <div class="form-group">
-            <label for="heading">Heading</label>
-            <input type="text" class="form-control" name="heading" value="{{ old('heading', $blog->heading) }}" required>
-        </div>
-        <div class="form-group">
-            <label for="detail_subcontent">Detail Subcontent</label>
-            <textarea class="form-control" name="detail_subcontent" required>{{ old('detail_subcontent', $blog->detail_subcontent) }}</textarea>
-        </div>
-        <div class="form-group">
-            <label for="subtitle1">Subtitle 1</label>
-            <input type="text" class="form-control" name="subtitle1" value="{{ old('subtitle1', $blog->subtitle1) }}" required>
-        </div>
-        <div class="form-group">
-            <label for="textcontent1">Text Content 1</label>
-            <textarea class="form-control" name="textcontent1" required>{{ old('textcontent1', $blog->textcontent1) }}</textarea>
-        </div>
-        <div class="form-group">
-            <label for="subtitle2">Subtitle 2</label>
-         <input type="text" class="form-control" name="subtitle2" value="{{ old('subtitle2', $blog->subtitle2) }}">
-        </div>
-        <div class="form-group">
-            <label for="textcontent">Text Content 2</label>
-            <input type="text" class="form-control" name="textcontent1" value="{{ old('textcontent1',  $blog->textcontent1) }}">
-        </div>
-    </form>
-    
+            </div>
 
-    <a href="{{ route('admin.products.index') }}">Back to Product List</a>
+            <!-- Button to Add More Fields -->
+            <button type="button" id="add-field" class="btn btn-secondary mb-3">Add More Content</button>
 
+            <div class="form-group">
+                <label for="image_url">Blog Image</label>
+                <input type="file" class="form-control" name="image_url">
+                @if ($blog->image_url)
+                    <img src="{{ asset($blog->image_url) }}" alt="Blog Image" width="100" class="mt-2">
+                @endif
+            </div>
 
-       <style>
-        .form-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+            <button type="submit" class="btn btn-primary">Update Blog</button>
+        </form>
+    </div>
 
-        .product-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    <!-- Include CKEditor 5 -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 
-        .form-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .form-row label {
-            width: 150px;
-            font-weight: 600;
-        }
-
-        .form-row input,
-        .form-row select,
-        .form-row textarea {
-            flex: 1;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-            margin-left: 10px;
-        }
-
-        .form-row textarea {
-            min-height: 80px;
-            resize: vertical;
-        }
-
-        .form-row input[type="file"] {
-            padding: 5px;
-        }
-
-        .btn-submit {
-            background-color: #28a745; /* Green for success */
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            margin-left: 160px; /* Align with label width */
-        }
-
-        .btn-submit:hover {
-            background-color: #218838;
-        }
-
-        .alert {
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .alert-danger {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .alert ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-    </style>
- 
-
+    <!-- Initialize CKEditor 5 and Handle Form Submission -->
     <script>
-        document.getElementById('category_id').addEventListener('change', function () {
-            let categoryId = this.value;
+        // Initialize CKEditor 5 for all textareas with the class 'ckeditor5'
+        document.querySelectorAll('.ckeditor5').forEach(textarea => {
+            ClassicEditor
+                .create(textarea)
+                .catch(error => {
+                    console.error(error);
+                });
+        });
 
-            fetch(`/get-subcategories/${categoryId}`)
-                .then(response => response.json())
-                .then(data => {
-                    let subcategorySelect = document.getElementById('subcategory_id');
-                    subcategorySelect.innerHTML = '<option value="">Select a Subcategory</option>';
+        // Add Dynamic Fields
+        document.getElementById('add-field').addEventListener('click', function () {
+            const container = document.getElementById('dynamic-fields');
+            const fieldCount = container.querySelectorAll('.form-group').length / 2 + 1;
 
-                    data.subcategories.forEach(subcategory => {
-                        let option = document.createElement('option');
-                        option.value = subcategory.id;
-                        option.textContent = subcategory.name;
-                        subcategorySelect.appendChild(option);
-                    });
-                })
-                .catch(error => console.error('Error:', error));
+            const subtitleDiv = document.createElement('div');
+            subtitleDiv.className = 'form-group';
+            subtitleDiv.innerHTML = `
+                <label for="subtitle${fieldCount}">Subtitle ${fieldCount}</label>
+                <input type="text" class="form-control" name="subtitles[]" required>
+            `;
+            container.appendChild(subtitleDiv);
+
+            const textContentDiv = document.createElement('div');
+            textContentDiv.className = 'form-group';
+            textContentDiv.innerHTML = `
+                <label for="textcontent${fieldCount}">Text Content ${fieldCount}</label>
+                <textarea class="form-control ckeditor5" name="textcontents[]" id="textcontent${fieldCount}" required></textarea>
+            `;
+            container.appendChild(textContentDiv);
+
+            // Initialize CKEditor 5 for the new textarea
+            ClassicEditor
+                .create(document.getElementById(`textcontent${fieldCount}`))
+                .catch(error => {
+                    console.error(error);
+                });
+        });
+
+        // Validate CKEditor 5 content before form submission
+        document.querySelector('form').addEventListener('submit', function (event) {
+            let isValid = true;
+
+            // Loop through all CKEditor 5 instances
+            document.querySelectorAll('.ckeditor5').forEach(textarea => {
+                const editor = ClassicEditor.instances[textarea.id];
+                if (editor && editor.getData().trim() === '') {
+                    isValid = false;
+                    alert(`Please fill out the "${textarea.previousElementSibling.innerText}" field.`);
+                }
+            });
+
+            // Prevent form submission if validation fails
+            if (!isValid) {
+                event.preventDefault();
+            }
         });
     </script>
 @endsection

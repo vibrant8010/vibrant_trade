@@ -4,7 +4,7 @@ header{
     z-index: 9999999999999;
 }
 header .header-top{
-     padding: 37px 16px 25px 16px;
+     padding: 19px 17px 19px 16px;
     display: flex;
     align-items: center;
   justify-content: space-between;
@@ -17,7 +17,7 @@ header .header-top{
     gap: 50px;
 }
 .header-logo-container{
-   max-width: 173px;
+   max-width: 150px;
 
 }
 .header-logo-container img{
@@ -317,7 +317,7 @@ header .nav-container .nav-view .nav-item {
 
 @media screen and (max-width:1299px) {
     header .header-top{
-        padding: 30px 9px 19px 5px;
+        padding: 15px 9px 15px 5px;
     }
     .search-section {
         display: flex;
@@ -349,7 +349,8 @@ header .nav-container .nav-view .nav-item {
         max-width: 275px !important;
     }
         .search-section .input_location {
-        font-size: 15px !important;
+            font-size: 24px !important;
+            font-weight: 700 !important;
     }
     .menu > li {
         border-right: 0 !important;
@@ -521,7 +522,7 @@ header .nav-container .nav-view .nav-item {
   left: 0;
   right: 0;
   margin: auto;
-  top: 30px;
+  top: 15px;
 }
 }
 
@@ -620,6 +621,7 @@ header .contact-cheap {
     }
     .search-section .inputgroup_location {
         width: 180px;
+        margin: 0 0 0 58px;
     }
     header .header-top {
         padding: 18px 14px 15px 15px;
@@ -630,13 +632,14 @@ header .contact-cheap {
     .suggestions-box #suggestions-list li {
       font-size: 12px !important;
     }
+
 }
 @media screen and (max-width:440px) {
     .search-section .inputgroup_location {
         width: 140px;
     }
     header .header-top {
-        padding: 19px 4px 12px 2px !important;
+        padding:19px 4px 12px 2px !important;
     }
     .search-section .input_location_box:after {
      content: "";
@@ -648,17 +651,22 @@ header .contact-cheap {
 }
 @media screen and (max-width:321px) {
     .search-section .input_location {
-    font-size: 12px !important;
-    padding: 2px 1px 7px 20px !important;
+        font-size: 20px !important;
+        padding: 5px 1px 7px 20px !important;
+        font-weight: 600 !important;
     }
     .search-container input[type="text"] {
         width: 100% !important;
     }
     .search-section .inputgroup_location {
         width: 226px !important;
-        margin-left: 30px;
+        margin-left: 55px;
+        margin-top: 3px;
     }
-
+    .modal-category .category-menu-item a {
+        font-size: 14px;
+        margin-left: 8px;
+    }
 
 .search-section .input_location_box {
     padding: 5px 9px !important;
@@ -902,33 +910,25 @@ header .nav-container .nav-view .nav-item .nav-link:hover::before,
 }
 .search-section .input_location_box{
    overflow: hidden;
-   box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
 }
 .suggestions-box{
     scrollbar-width: thin;
 }
-/* .search-section .input_location_box:after {
-    position: absolute;
-    content: "";
-    right: 0;
-    top: 0;
-    width: 40px;
-    height: 100%;
-    z-index: 1;
-} */
+
 .search-section .input_location_box:before {
-    background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/location_icon.svg);
-    width: 37px;
-    height: 100%;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 5px;
+    top: 10px;
     content: "";
     background-repeat: no-repeat;
     background-position: center;
+    background: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/prot_072018/hdrlocation.svg);
+    background-repeat: no-repeat;
 }
 .search-section .input_location_box{
-    border: solid .5px #585353;
+ border: solid .5px #585353;
     background: rgb(224,227,255);
     background: linear-gradient(96deg, rgba(224,227,255,0.1358193277310925) 0%, rgba(0,83,83,0.048144257703081283) 42%);
     -moz-transition: all .15s;
@@ -950,22 +950,31 @@ header .nav-container .nav-view .nav-item .nav-link:hover::before,
 }
 
 /*search location box*/
+.close-button {
+    position: relative;
+    top: 12px;
+    left: 29px;
+    color: #211f1f;
+    /* background-color: teal; */
+    border: none;
+    border-radius: 50%;
+    height: 46px;
+     width: 40px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    font-size: 34px;
+    cursor: pointer;
+    z-index: 99999999999999999;
+    font-weight: 300;
 
-/*
-  .search-location-box .input_location {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  } */
-
+}
   .search-location-box .dropdown-list {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: white;
+    background-color: #ffff;
     border: 1px solid #ccc;
     border-radius: 4px;
     max-height: 150px;
@@ -986,12 +995,6 @@ header .nav-container .nav-view .nav-item .nav-link:hover::before,
   .search-location-box .dropdown-item:hover {
     background-color: #f0f0f0;
   }
-
-  /*popup contnet*/
-  /* .modal-content {
-    border-radius: 20px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-  } */
    .modal-category {
     padding: 0;
    }
@@ -1003,7 +1006,7 @@ header .nav-container .nav-view .nav-item .nav-link:hover::before,
   }
 
 .modal-content .modal-category .modal-nav-item{
-    border-bottom: 1px solid var(--shade-color);
+    border-bottom: 1px solid #8b8b8b1c;
     padding: 14px 15px;
     list-style-type: none;
     text-align: left;
@@ -1262,4 +1265,237 @@ header .nav-container .nav-view .nav-item .nav-link:hover::before,
         background-color: #f0f0f0;
     }
 
-  
+
+    /*sticky note*/
+   .sticky-note{
+    position: absolute;
+    background-color: var(--ternery-color);
+    left: -27px;
+    top: 136px;
+    padding: 1px 0;
+    /* border-radius: 0 15px 15px 0; */
+    box-shadow: rgb(39 25 25 / 22%) 1.95px 1.95px 0px;
+    transform: rotate(90deg);
+    }
+   .sticky-note .btn-links{
+    height: 16px;
+    color: var(--light-color);
+    font-size: 14px;
+    padding: 0 10px;
+   }
+   .sticky-note .btn-links:hover{
+    color: var(--light-color);
+   }
+
+
+
+
+   /* Remove default Bootstrap dropdown */
+.custom-dropdown-btn::after {
+    display: none; /* Removes the dropdown arrow */
+}
+
+/* Style the button */
+.custom-dropdown-btn {
+    color: var(--primary-color);
+    background-color: transparent;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Hide dropdown menu by default */
+.custom-dropdown-menu {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+/* Show dropdown when hovering over button or menu */
+.dropdown:hover .custom-dropdown-menu {
+    display: block;
+}
+
+/* Style dropdown items */
+/* .custom-dropdown-menu .dropdown-item {
+    color: #333;
+    padding: 10px;
+    transition: 0.3s;
+
+}
+.custom-dropdown-menu .dropdown-item:hover {
+    background-color: transparent;
+    color: white;
+} */
+
+
+/* for search box */
+#suggestions-box {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  #suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #suggestions-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+    list-style-type: none;
+  }
+  #suggestions-list ul{
+    padding: 0;
+  }
+  #suggestions-list li:hover,
+  #suggestions-list li.highlighted {
+    background-color: #f0f0f0;
+  }
+
+  .globalnav-searchresults-header {
+    display: block;
+    padding: 8px 12px;
+    font-weight: bold;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .highlight {
+    background-color: #ddd;
+    font-weight: bold;
+  }
+
+  .loading, .no-results {
+    color: #888;
+    font-style: italic;
+  }
+
+  /* Dropdown container */
+.logout-dropdown.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button styling */
+.logout-dropdown .dropdown-btn {
+    border-radius: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px #8080806e;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+   /* height: 30px
+    width: 30px; */
+    padding: 6px 10px;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dropdown menu */
+.logout-dropdown .dropdown-menu {
+    position: absolute;
+    top: 103%;
+    left: 0;
+    background: #fff;
+    list-style: none;
+    margin: 0;
+    border-radius: 2px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    display: none; /* Ensure it's toggled via JavaScript */
+    width: 100%;
+    z-index: 3;
+    padding: 0;
+}
+
+.logout-dropdown .dropdown-menu::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    top: -7px;
+    left: 20px;
+    z-index: -1;
+    transform: rotate(45deg);
+    box-shadow: -2px -1px 0px rgb(0 0 0 / 4%);
+}
+/* Hover effect to open dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown items */
+.logout-dropdown .dropdown-menu li {
+    padding: 8px 12px;
+}
+
+.logout-dropdown .dropdown-menu li a {
+    text-decoration: none;
+    color: var(--light-color);
+    display: block;
+    font-weight: bold;
+    padding: 5px 14px;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: var(--ternery-color);
+    font-weight: 500;
+}
+/* #toggleCss:not(:checked) ~ .box {
+    display: none;
+  } */
+
+/* Hover effect for links */
+.logout-dropdown .dropdown-menu li a:hover {
+    background: #f1f1f1;
+}
+
+@media screen and (max-width:767px) {
+    .modal-category{
+        width: 100%;
+    }
+    .modal-category .category-menu-item a{
+        text-decoration: none;
+        color: #211d1dd6;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .search-section .input_location_box{
+        border: 0;
+    }
+    .search-section .input_location_box:before {
+        left: 4px;
+        top: 15px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .logout-dropdown .dropdown-menu {
+        position: absolute;
+        top: 151%;
+        left: -111px;
+       width: 150px;
+    }
+    .logout-dropdown .dropdown-menu::after {
+        top: -7px;
+        left:126px;
+    }
+}

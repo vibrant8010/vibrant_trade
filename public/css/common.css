@@ -650,6 +650,7 @@ input[type="text"]::-webkit-search-cancel-button {
     color: var(--dark-color);
     transition: 0.5s all ease-in-out;
     text-decoration: none;
+
 }
 .inqury-btn:hover{
     background-color: var(--ternery-color);
@@ -940,25 +941,7 @@ input[type="text"]::-webkit-search-cancel-button {
 .show-close-button {
     display: block !important;
 }
-.close-button {
-    position: relative;
-    top: 20px;
-    left: 20px;
-    color: #211f1f;
-    /* background-color: teal; */
-    border: none;
-    border-radius: 50%;
-    height: 46px;
-     width: 40px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    font-size: 34px;
-    cursor: pointer;
-    z-index: 99999999999999999;
-    font-weight: 300;
 
-}
 /* .modal-content{
     position: relative;
     top: 150px;
@@ -995,6 +978,7 @@ header .lg-img {
     height: 31px;
     width: 30px;
     font-size: 14px;
+    margin-right: 9px;
 }
 .trigger:hover {
     background: #0056b3;
@@ -1279,6 +1263,18 @@ header .lg-img {
     font-size: 14px;
     color: #333;
     margin-left: 10px;
+}
+@media screen and (max-width:767px) {
+    .custom-modal-welcome
+    {
+       display: none;
+    }
+    .custom-modal-close {
+        top: 0 !important;
+        left: 0 !important;
+        height: 30px !important;
+        width: 32px !important;
+    }
 }
 
 .custom-modal-close {

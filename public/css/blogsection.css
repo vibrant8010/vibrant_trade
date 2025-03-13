@@ -1,5 +1,5 @@
 /* Featured Blog Post (Left) */
-.featured-blog {
+/* .featured-blog {
     flex: 2;
     background-color: white;
     border-radius: 15px;
@@ -63,7 +63,7 @@
     color: #0056b3;
   }
 
-  /* Blog List (Right) */
+
   .blog-list {
     flex: 1;
     max-height: 420px;
@@ -147,4 +147,85 @@
         font-size: 13px;
         margin-bottom: 0;
     }
+  } */
+  /*seconnd time create*/
+  .blog-section{
+    background-color: transparent;
+    border: 0;
   }
+  .blog-section .main-container{
+    max-height: 400px;
+    height: 250px;
+    overflow: hidden;
+}
+.blog-section .main-container.bg_fix{
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.blog-section .main-container img{
+ height: 100%;
+ width: 100%;
+}
+
+/* .blog-section .blog-container-date{
+    position: absolute;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+    background-color: var(--ternery-color);
+    color: #666;
+    text-transform: uppercase;
+    padding: 10px;
+    transform: rotate(270deg);
+    display: flex;
+    height: 35px;
+    top: 40%;
+    right: -67px;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+} */
+.blog-section .blog-container-date .blog-date{
+    height: 10px;
+    color: var(--ternery-color);
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.blog-section .card-body{
+    text-align: center;
+    padding: 10px 0;
+}
+.blog-section .card-body .blog-info .blog-title{
+    color: var(--shade-color);
+    font-size: 18px;
+    padding: 10px 0;
+    height: 66px;
+}
+.blog-section .card-body .read-more{
+    padding: 8px 17px;
+    color: var(--light-color);
+    font-size: 16px;
+    font-weight: 400;
+      cursor: pointer;
+    text-decoration: none !important;
+    background:  var(--ternery-color);
+    transition: 0.5s all ease-in-out;
+}
+.blog-section .card-body .read-more:hover{
+  background-color: var(--primary-color);
+}
+.blog-section .owl-dots{
+    display: block !important;
+}
+.blog-container-date::after{
+    height: 1px;
+    width: 100px;
+    background-color: var(--ternery-color);
+    content: "";
+    display: block;
+    text-align: center;
+    display: flex;
+    left: 38%;
+    position: relative;
+    margin-top: 29px;
+}

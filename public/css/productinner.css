@@ -1,0 +1,63 @@
+   /* product sert */
+   .inner-product-container .product-img {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 992px) {
+   .inner-product-container .product-img {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 576px) {
+   .inner-product-container .product-img {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .inner-product-container .product-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .inner-product-container .product-thumbnail p {
+    margin: 10px 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .inner-product-container .banner-img {
+    max-width: 1200px;
+  }
+
+  .inner-product-container .banner-img img {
+    width: 100%;
+    height: 100%;
+  }
+  .inner-product-container .product-thumbnail:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+  .inner-product-container .thum-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .inner-product-container .product-thumbnail {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+  }

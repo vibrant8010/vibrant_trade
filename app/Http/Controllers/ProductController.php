@@ -72,6 +72,7 @@ class ProductController extends Controller
         return view('adminpanel.products.index', compact('products'));
     }
 
+
     public function edit($id)
     {
         $subcategories = Subcategory::all();
@@ -92,7 +93,7 @@ class ProductController extends Controller
             'category_type' => 'required|in:Top,Trending,New Arrival',
             'material' => 'nullable|string',
             'size' => 'nullable|string',
-            'companyname' => 'required|string|max:255', // Add validation for company name
+            'companyname' => 'string|max:255', // Add validation for company name
             'logo_url' => 'nullable|file|image|max:10240', // Add validation for logo
             'image_url' => 'nullable|file|image|max:10240', // Image is optional during update
         ]);
@@ -200,6 +201,26 @@ class ProductController extends Controller
     // Pass the product details to the view
     //  return redirect()->route('user.home')->with('alert', 'Please log in to view product details.');
     //  }
+
+ public function categoryDetails($name){
+        $category = Category::with(['products', 'category'])
+        ->where('name', $name)
+        ->pluck('id');
+
+        $subcatrgory = Subcategory::with(['products', 'category'])
+        ->wherein('category_id', $category) // Filter by category ID
+        ->get();
+
+        $subcatrgoryid = Subcategory::with(['products', 'category'])
+        ->wherein('category_id', $category) // Filter by category ID
+        ->pluck('id');
+
+        $products = Product::with(['company', 'category', 'subcategory'])
+        ->whereIn('subcategory_id', $subcatrgoryid) // Filter by category ID
+        ->get();
+
+        return view('innercategory',['products' => $products,'subcatrgory'=>$subcatrgory]);
+    } 
 
     public function productDetail($id)
     {

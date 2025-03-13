@@ -9,14 +9,15 @@ class Blog extends Model
 {
     use HasFactory;
 
-    // Make sure to specify the fields that can be mass-assigned
     protected $fillable = [
         'heading',
         'detail_subcontent',
-        'subtitle1',
-        'textcontent1',
-        'subtitle2',
-        'textcontent2',
         'image_url',
     ];
+
+    // Define the relationship with BlogSection
+    public function sections()
+    {
+        return $this->hasMany(BlogSection::class);
+    }
 }

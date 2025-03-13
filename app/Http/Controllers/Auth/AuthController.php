@@ -234,7 +234,8 @@ class AuthController extends Controller
             if ($user->role == 'business') {
                 return redirect()->route('business.dashboard')->with('success', 'Login successful!');
             } elseif ($user->role == 'super_admin') {
-                return redirect()->route('admin.dashboard')->with('success', 'Login successful!');
+                // return redirect()->route('admin.dashboard')->with('success', 'Login successful!');
+                return redirect()->route('dashboard')->with('success', 'Login successful!');
             }
 
             return redirect()->route('user.home')->with('success', 'Login successful!');
